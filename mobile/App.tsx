@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { useFonts, 
   Inter_400Regular, 
   Inter_600SemiBold, 
@@ -6,6 +6,7 @@ import { useFonts,
   Inter_800ExtraBold
 } from '@expo-google-fonts/inter'
 import { Loading } from './src/components/Loading';
+import { Home } from './src/screens/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,25 +23,15 @@ export default function App() {
     return(
       <Loading/>
     )
-  }
+  } 
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Open up App.tsx to start working on your app!</Text>
+    // Isso é conhecido como fragment que serve para encapsular todo o componente
+    // Serve de estratégia pois a função só consegue retornar apenas um elemento
+    <>
+      <Home/>
       <StatusBar barStyle="light-content" backgroundColor={'transparent'} translucent />
-    </View>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#09090A',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#fff',
-    fontFamily: 'Inter_800ExtraBold'
-  }
-});
