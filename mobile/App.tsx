@@ -5,8 +5,9 @@ import { useFonts,
   Inter_700Bold, 
   Inter_800ExtraBold
 } from '@expo-google-fonts/inter'
+
 import { Loading } from './src/components/Loading';
-import { Home } from './src/screens/Home';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +30,7 @@ export default function App() {
     // Isso é conhecido como fragment que serve para encapsular todo o componente
     // Serve de estratégia pois a função só consegue retornar apenas um elemento
     <>
-      <Home/>
+      <Routes/>
       <StatusBar barStyle="light-content" backgroundColor={'transparent'} translucent />
     </>
   );
